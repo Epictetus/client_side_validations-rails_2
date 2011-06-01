@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "client_side_validations-rails_2/version"
+require "client_side_validations/rails_2/version"
 
 Gem::Specification.new do |s|
   s.name        = "client_side_validations-rails_2"
