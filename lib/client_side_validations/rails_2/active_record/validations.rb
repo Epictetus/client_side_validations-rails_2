@@ -15,7 +15,22 @@ end
 require 'client_side_validations/rails_2/active_record/validations/base'
 
 %w{presence}.each do |validator|
-  require "client_side_validations/rails_2/active_record/validations/#{validator}"
+  eval <<-MODULE
+  module ClientSideValidations::Rails2::ActiveRecord::Validations
+    const_set '#{validator.capitalize}', Class.new(Base)
+
+    module ClassMethods
+      define_method "validates_#{validator}_of" do |*attr_names|
+        options = attr_names.extract_options!
+        attr_names.each do |name|
+          self._validators[name] << #{validator.capitalize}.new(name, options)
+        end
+
+        super(attr_names << options)
+      end
+    end
+  end
+  MODULE
 end
 
 ActiveRecord::Base.send(:extend,  ClientSideValidations::Rails2::ActiveRecord::Validations::ClassMethods)

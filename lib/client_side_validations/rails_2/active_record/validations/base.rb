@@ -13,5 +13,9 @@ module ClientSideValidations::Rails2::ActiveRecord::Validations
       options_equality   = self.options    == other.options
       class_equality && attribute_equality && options_equality
     end
+
+    def kind
+      self.class.to_s.split('::').last.downcase.to_sym
+    end
   end
 end

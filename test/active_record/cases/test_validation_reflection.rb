@@ -12,7 +12,10 @@ class ValidationReflectionTest < ClientSideValidations::ActiveRecordTestBase
     user = new_user do |u|
       u.validates_presence_of :name
     end
-    expected = { :name => [ClientSideValidations::Rails2::ActiveRecord::Validations::Presence.new(:name)] }
+    validator = ClientSideValidations::Rails2::ActiveRecord::Validations::Presence.new(:name)
+    expected = { :name => [validator] }
     assert_equal expected, user._validators
+    assert_equal :presence, validator.kind
   end
+
 end
