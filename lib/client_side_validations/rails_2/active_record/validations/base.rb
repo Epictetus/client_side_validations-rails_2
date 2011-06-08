@@ -4,7 +4,7 @@ module ClientSideValidations::Rails2::ActiveRecord::Validations
 
     def initialize(attributes, options = nil)
       self.attributes = attributes
-      self.options    = options.blank? ? nil : options
+      self.options    = options
     end
 
     def ==(other)
