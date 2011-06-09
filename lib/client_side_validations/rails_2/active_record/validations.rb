@@ -4,7 +4,6 @@ module ClientSideValidations::Rails2::ActiveRecord::Validations
   module ClassMethods
     def validates_uniqueness_of(*attr_names)
       options = attr_names.extract_options!
-      options = options.empty? ? nil : options
       attr_names.each do |name|
         self._validators[name] << UniquenessValidator.new(name, options)
       end

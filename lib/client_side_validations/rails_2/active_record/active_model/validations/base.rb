@@ -2,7 +2,7 @@ module ActiveModel::Validations
   class BaseValidator
     attr_accessor :attributes, :options
 
-    def initialize(attributes, options = nil)
+    def initialize(attributes, options = {})
       self.attributes = attributes
       self.options    = options
     end
