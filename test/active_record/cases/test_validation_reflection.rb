@@ -15,7 +15,7 @@ class ValidationReflectionTest < ClientSideValidations::ActiveRecordTestBase
     user = new_user do |u|
       u.validates_acceptance_of :flag
     end
-    validator = ClientSideValidations::Rails2::ActiveRecord::Validations::Acceptance.new(:flag)
+    validator = ActiveModel::Validations::AcceptanceValidator.new(:flag)
     expected = { :flag => [validator] }
     assert_equal expected, user._validators
     assert_equal :acceptance, validator.kind
@@ -28,7 +28,7 @@ class ValidationReflectionTest < ClientSideValidations::ActiveRecordTestBase
     user = new_user do |u|
       u.validates_confirmation_of :name
     end
-    validator = ClientSideValidations::Rails2::ActiveRecord::Validations::Confirmation.new(:name)
+    validator = ActiveModel::Validations::ConfirmationValidator.new(:name)
     expected = { :name => [validator] }
     assert_equal expected, user._validators
     assert_equal :confirmation, validator.kind
@@ -41,7 +41,7 @@ class ValidationReflectionTest < ClientSideValidations::ActiveRecordTestBase
     user = new_user do |u|
       u.validates_exclusion_of :name, :in => ['Brian']
     end
-    validator = ClientSideValidations::Rails2::ActiveRecord::Validations::Exclusion.new(:name, :in => ['Brian'])
+    validator = ActiveModel::Validations::ExclusionValidator.new(:name, :in => ['Brian'])
     expected = { :name => [validator] }
     assert_equal expected, user._validators
     assert_equal :exclusion, validator.kind
@@ -54,7 +54,7 @@ class ValidationReflectionTest < ClientSideValidations::ActiveRecordTestBase
     user = new_user do |u|
       u.validates_format_of :name, :with => /\w+/
     end
-    validator = ClientSideValidations::Rails2::ActiveRecord::Validations::Format.new(:name, :with => /\w+/)
+    validator = ActiveModel::Validations::FormatValidator.new(:name, :with => /\w+/)
     expected = { :name => [validator] }
     assert_equal expected, user._validators
     assert_equal :format, validator.kind
@@ -66,7 +66,7 @@ class ValidationReflectionTest < ClientSideValidations::ActiveRecordTestBase
     user = new_user do |u|
       u.validates_inclusion_of :name, :in => ['Brian']
     end
-    validator = ClientSideValidations::Rails2::ActiveRecord::Validations::Inclusion.new(:name, :in => ['Brian'])
+    validator = ActiveModel::Validations::InclusionValidator.new(:name, :in => ['Brian'])
     expected = { :name => [validator] }
     assert_equal expected, user._validators
     assert_equal :inclusion, validator.kind
@@ -79,7 +79,7 @@ class ValidationReflectionTest < ClientSideValidations::ActiveRecordTestBase
     user = new_user do |u|
       u.validates_length_of :name, :is => 10
     end
-    validator = ClientSideValidations::Rails2::ActiveRecord::Validations::Length.new(:name, :is => 10)
+    validator = ActiveModel::Validations::LengthValidator.new(:name, :is => 10)
     expected = { :name => [validator] }
     assert_equal expected, user._validators
     assert_equal :length, validator.kind
@@ -92,7 +92,7 @@ class ValidationReflectionTest < ClientSideValidations::ActiveRecordTestBase
     user = new_user do |u|
       u.validates_numericality_of :age
     end
-    validator = ClientSideValidations::Rails2::ActiveRecord::Validations::Numericality.new(:age)
+    validator = ActiveModel::Validations::NumericalityValidator.new(:age)
     expected = { :age => [validator] }
     assert_equal expected, user._validators
     assert_equal :numericality, validator.kind
@@ -105,7 +105,7 @@ class ValidationReflectionTest < ClientSideValidations::ActiveRecordTestBase
     user = new_user do |u|
       u.validates_presence_of :name
     end
-    validator = ClientSideValidations::Rails2::ActiveRecord::Validations::Presence.new(:name)
+    validator = ActiveModel::Validations::PresenceValidator.new(:name)
     expected = { :name => [validator] }
     assert_equal expected, user._validators
     assert_equal :presence, validator.kind
@@ -117,7 +117,7 @@ class ValidationReflectionTest < ClientSideValidations::ActiveRecordTestBase
     user = new_user do |u|
       u.validates_size_of :name, :is => 10
     end
-    validator = ClientSideValidations::Rails2::ActiveRecord::Validations::Length.new(:name, :is => 10)
+    validator = ActiveModel::Validations::LengthValidator.new(:name, :is => 10)
     expected = { :name => [validator] }
     assert_equal expected, user._validators
     assert_equal :length, validator.kind
@@ -130,7 +130,7 @@ class ValidationReflectionTest < ClientSideValidations::ActiveRecordTestBase
     user = new_user do |u|
       u.validates_uniqueness_of :name
     end
-    validator = ClientSideValidations::Rails2::ActiveRecord::Validations::Uniqueness.new(:name)
+    validator = ClientSideValidations::Rails2::ActiveRecord::Validations::UniquenessValidator.new(:name)
     expected = { :name => [validator] }
     assert_equal expected, user._validators
     assert_equal :uniqueness, validator.kind

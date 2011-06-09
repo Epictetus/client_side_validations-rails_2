@@ -1,5 +1,5 @@
-module ClientSideValidations::Rails2::ActiveRecord::Validations
-  class Base
+module ActiveModel::Validations
+  class BaseValidator
     attr_accessor :attributes, :options
 
     def initialize(attributes, options = nil)
@@ -14,8 +14,12 @@ module ClientSideValidations::Rails2::ActiveRecord::Validations
       class_equality && attribute_equality && options_equality
     end
 
+    def self.kind
+      @kind ||= name.split('::').last.underscore.sub(/_validator$/, '').to_sym
+    end
+
     def kind
-      self.class.to_s.split('::').last.downcase.to_sym
+      self.class.kind
     end
   end
 end
