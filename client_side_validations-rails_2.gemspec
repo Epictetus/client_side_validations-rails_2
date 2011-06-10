@@ -21,7 +21,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'client_side_validations', '~> 3.0.4'
 
   s.add_development_dependency 'activerecord', '~> 2.3.0'
+  s.add_development_dependency 'actionpack',   '~> 2.3.0'
   s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'mocha'
 
   if RUBY_VERSION >= "1.9"
     s.add_development_dependency 'ruby-debug19'
