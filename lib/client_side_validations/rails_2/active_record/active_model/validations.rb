@@ -44,6 +44,8 @@ end
 require 'client_side_validations/rails_2/active_record/active_model/validations/numericality'
 
 module ActiveModel::Validations::ClassMethods
-  alias_method :validates_size_of, :validates_length_of
+  def validates_size_of(*attr_names)
+    validates_length_of(*attr_names)
+  end
 end
 

@@ -8,10 +8,7 @@ require 'action_view/models'
 module ActionViewTestSetup
   include ::ClientSideValidations::ActionView::Helpers::FormHelper
   include ::ClientSideValidations::ActionView::Helpers::FormTagHelper
-
-  def form_for(*)
-    @output_buffer = super
-  end
+  include ::ClientSideValidations::Rails2::ActionView::Helpers::FormHelper
 
   def setup
     super
