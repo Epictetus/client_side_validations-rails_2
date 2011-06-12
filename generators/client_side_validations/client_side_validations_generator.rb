@@ -1,3 +1,5 @@
+require 'client_side_validations/files'
+
 class ClientSideValidationsGenerator < Rails::Generator::Base
   def manifest
     record do |c|
