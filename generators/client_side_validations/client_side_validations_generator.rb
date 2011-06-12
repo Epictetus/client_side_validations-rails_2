@@ -5,4 +5,8 @@ class ClientSideValidationsGenerator < Rails::Generator::Base
       c.file(ClientSideValidations::Files::Javascript,  'public/javascripts/rails.validations.js')
     end
   end
+
+  def source_path(relative_path)
+    relative_path
+  end
 end
