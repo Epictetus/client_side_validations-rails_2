@@ -1,5 +1,9 @@
+require 'client_side_validations/active_record/uniqueness'
+
 module ActiveRecord::Validations
-  const_set 'UniquenessValidator', Class.new(ActiveModel::Validations::BaseValidator)
+  class UniquenessValidator < ActiveModel::Validations::BaseValidator
+    include ClientSideValidations::ActiveRecord::Uniqueness
+  end
 end
 
 module ClientSideValidations::Rails2::ActiveRecord::Validations
