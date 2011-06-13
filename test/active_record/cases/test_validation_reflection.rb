@@ -130,7 +130,7 @@ class ValidationReflectionTest < ClientSideValidations::ActiveRecordTestBase
     user = new_user do |u|
       u.validates_uniqueness_of :name
     end
-    validator = ClientSideValidations::Rails2::ActiveRecord::Validations::UniquenessValidator.new(:name)
+    validator = ActiveRecord::Validations::UniquenessValidator.new(:name)
     expected = { :name => [validator] }
     assert_equal expected, user._validators
     assert_equal :uniqueness, validator.kind
