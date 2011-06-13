@@ -1,0 +1,5 @@
+== 0.0.1
+  Wrapper for ClientSideValidations
+  Added ActiveModel API to ActiveRecord 2.x
+  concat script from form_for ClientSideValidations
+  Wrote ActiveRecord 2.x middleware for Uniqueness
