@@ -1,6 +1,6 @@
-# ClientSideValidations for Rails 2.x #
+# ClientSideValidations for Rails 2.3.x #
 
-This gem provides a thin wrapper for [ClientSideValidations](https://github.com/bcardarella/client_side_validations)
+This gem provides a thin wrapper for [ClientSideValidations](https://github.com/bcardarella/client_side_validations) to be used in Rails 2.3.x
 
 ## Installation ##
 
@@ -9,7 +9,7 @@ This gem provides a thin wrapper for [ClientSideValidations](https://github.com/
 Add the gem to your `config/environment.rb` file:
 
 ```ruby
-  config.gem 'client_side_validations-rails_2', :lib => 'client_side_validations/rails_2'
+config.gem 'client_side_validations-rails_2', :lib => 'client_side_validations/rails_2'
 ```
 
 Run the `gems:install` `rake` task:
