@@ -5,9 +5,6 @@ require 'client_side_validations/middleware'
 module ClientSideValidations
 
   module Middleware
-    class Validators
-    end
-
     class Base
       def initialize(env)
         self.body    = ''
@@ -15,5 +12,11 @@ module ClientSideValidations
         self.request = ActionController::Request.new(env)
       end
     end
+  end
+end
+
+if defined?(Rails)
+  Rails.configuration.after_initialize do
+    Rails.configuration.middleware.use ClientSideValidations::Middleware::Validators
   end
 end
