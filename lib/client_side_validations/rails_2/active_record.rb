@@ -4,6 +4,7 @@ end
 
 require 'client_side_validations/rails_2/active_record/active_model'
 require 'client_side_validations/rails_2/active_record/validations'
+require 'client_side_validations/rails_2/active_record/middleware'
 
 require 'client_side_validations/active_model'
 

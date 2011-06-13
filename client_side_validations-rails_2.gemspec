@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'actionpack',   '~> 2.3.0'
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'mocha'
+  s.add_development_dependency 'rack-test'
 
   if RUBY_VERSION >= "1.9"
     s.add_development_dependency 'ruby-debug19'
