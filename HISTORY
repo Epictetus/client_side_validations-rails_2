@@ -1,3 +1,6 @@
+== 0.0.2
+  Version bumped to work with ClientSideValidations v3.1.0.rc.1
+
 == 0.0.1
   Wrapper for ClientSideValidations
   Added ActiveModel API to ActiveRecord 2.x
