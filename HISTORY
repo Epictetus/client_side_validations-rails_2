@@ -1,3 +1,6 @@
+== 1.0.0
+  Lock to 3-0-stable series of ClientSideValidations
+
 == 0.0.2
   Version bumped to work with ClientSideValidations v3.1.0.rc.1
 
