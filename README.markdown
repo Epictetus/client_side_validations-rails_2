@@ -1,6 +1,7 @@
 # ClientSideValidations for Rails 2.3.x #
 
 This gem provides a thin wrapper for [ClientSideValidations](https://github.com/bcardarella/client_side_validations) to be used in Rails 2.3.x
+Please check out the [ClientSideValidations GoogleGroup](http://groups.google.com/group/client_side_validations)
 
 ## Installation ##
 
